@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>class 1</title>
+  </head>
+  <style>
+    h1{
+      user-select: none;
+      cursor: pointer;
+    }
+    .content{
+      display: none;
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <h1 onclick="showHide(1)">php class 1 </h1>
+    <div id="class1" class="content">
+      <ol>
+        <li>
+          how a website is detected
+          <ul>
+            <li>dns caching</li>
+            <li>os caching</li>
+            <li>isp caching</li>
+          </ul>
+        </li>
+        <li>phpinfo</li>
+        <li>encho/print</li>
+        <li>concatination</li>
+        <dd>echo"a" . "b"</dd>
+        <li>variables</li>
+        <ol type="i">
+          <li>$var_name = loose type variable</li>
+          <dd>
+            primitive : number , string , float , boolean<br />displaying :
+            <br />
+            echo $var_name <br />
+            echo $var_bool , if false doesnt display anything
+          </dd>
+          <li>var_dump()</li>
+          <dd>display value and datatype</dd>
+        </ol>
+        <li>functions</li>
+        <dd>
+          syntax : function funciton_name(){ <i>statements <br /></i>
+          return ....}
+          <br />
+          calling : function_name()
+          <br />
+          <strong>
+            global variables dont really work.need to pass as a
+            parameter</strong
+          >
+          <br />
+          alternative : use global $var_name
+        </dd>
+        <li>conditions</li>
+        <ul>
+          <li>if-else</li>
+          <li>
+            switch($var_name){ <br />
+            case : <i>statements</i> break; <br />
+            defailt : }
+          </li>
+        </ul>
+      </ol>
+    </div>
+    <h1 onclick="showHide(2)">php class 2</h1>
+    <div id="class2" class="content">
+      <p>we learned about array and types</p>
+      <ul>
+        <li>indexed array</li>
+        <dd>$x= array('values','values')</dd>
+        <li>associctive array</li>
+        <dd>$y = array("key"=>"value","location"=>"home")</dd>
+        <li>multi-dimensional</li>
+        <dd>array(array(1,2,3),array(1,2,3))</dd>
+      </ul>
+    </div>
+  </body>
+  <script>
+    alert("click to view")
+    let id;
+    function showHide(i) {
+      id = i;
+      let ele=document.getElementById("class" + id);
+      if (ele.style.display=="") {
+        ele.style.display="block"
+      }
+      else ele.style.display="";
+    }
+    
+  </script>
+</html>
