@@ -6,17 +6,17 @@
     <title>class 1</title>
   </head>
   <style>
-    h1{
+    h1 {
       user-select: none;
       cursor: pointer;
     }
-    .content{
+    .content {
       display: none;
       cursor: pointer;
     }
   </style>
   <body>
-    <h1 onclick="showHide(1)">php class 1 </h1>
+    <h1 onclick="showHide(1)">php class 1</h1>
     <div id="class1" class="content">
       <ol>
         <li>
@@ -80,18 +80,88 @@
         <dd>array(array(1,2,3),array(1,2,3))</dd>
       </ul>
     </div>
+    <h1 onclick="showHide(3)">GET and POST</h1>
+    <div id="class3" class="content">
+      <p>
+        GET method : data is embued in url (query param) , not secure e,g :
+        /?name=adad&age=100 POST method : data is embued inside payload but
+        there is nothing in url , secure();
+        <strong>
+          if any data that could change your resources , always use post
+          <br />only use get when data data that was sent bring 0 or no
+          significant changes
+        </strong>
+        GET in php
+        <code>
+          <pre>
+            $_GET(); //returns an associative array with a key and and a sent value
+            $_GET["keyname"] // to get the data inside the key;
+          </pre>
+        </code>
+        POST in php 
+        <code>
+          <pre>
+            $_POST(); //returns an associative array with a key and and a sent value
+            $_POST["keyname"] // to get the data inside the key;
+
+          </pre>
+
+          <h1>HTTP IS ALWAYS STATELESS</h1>
+        </code>
+
+
+      </p>
+    </div>
+    <h1 onclick="showHide(4)">Session and Cookoies</h1>
+    <div id="class4" class="content">
+      <h2>Session & cookies</h2>
+      <p>
+        http is stateless ,it means once a connection is terminated , http
+        doesnt hold any memory of the connection.
+      </p>
+
+      <p>
+        state maintenace incase a browser need to hold any kind of info of a
+        website , the server creates a session file where it hold the info of
+        that website . it hold two info in that file(.session)
+        <li>session id</li>
+        <li>data</li>
+        these info are stored in client sides browser . these data are cookies.
+        <br />
+        cookies are always in client side . <br />
+        session are always in server side .
+      </p>
+
+      <h3>session codes</h3>
+      <code>
+        <pre>
+// start session 
+session_start();
+
+// set session?
+$_SESSION['name'] = 'aman';
+
+// get session ?
+$name = $_SESSION['name'];
+// displaying session
+var_dump($_SESSION);
+
+// destroy session
+session_destroy();
+          </pre
+        >
+      </code>
+    </div>
   </body>
   <script>
-    alert("click to view")
+    // alert("click to view");
     let id;
     function showHide(i) {
       id = i;
-      let ele=document.getElementById("class" + id);
-      if (ele.style.display=="") {
-        ele.style.display="block"
-      }
-      else ele.style.display="";
+      let ele = document.getElementById("class" + id);
+      if (ele.style.display == "") {
+        ele.style.display = "block";
+      } else ele.style.display = "";
     }
-    
   </script>
 </html>
