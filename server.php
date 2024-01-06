@@ -1,6 +1,6 @@
 <?php
 // start session 
-
+echo "lost";
 session_start();
 //  $_SESSION
 // set session?
